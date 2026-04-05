@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brushed by Lika — Professional Makeup Artist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F2;
+    --cream-dark: #F0EBE1;
+    --brown: #5C3D2E;
+    --brown-light: #8B6355;
+    --brown-pale: #C4A898;
+    --text: #2A1F1A;
+    --text-muted: #7A6358;
+    --white: #FFFFFF;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 60px;
+    background: var(--cream);
+    border-bottom: 0.5px solid var(--brown-pale);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .logo em { font-style: italic; color: var(--brown-light); }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--brown);
+    border: none;
+    padding: 12px 28px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--brown-light); }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 73px);
+  }
+
+  .hero-left {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--brown-light);
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: 58px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 28px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--brown-light);
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 380px;
+    margin-bottom: 48px;
+  }
+
+  .btn-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 16px 36px;
+    background: var(--brown);
+    color: var(--white);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+    font-family: var(--sans);
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: var(--brown-light); }
+
+  .btn-ghost {
+    display: inline-block;
+    padding: 16px 36px;
+    background: transparent;
+    color: var(--brown);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 0.5px solid var(--brown-pale);
+    transition: all 0.2s;
+    font-family: var(--sans);
+    cursor: pointer;
+  }
+
+  .btn-ghost:hover { border-color: var(--brown); }
+
+  .hero-right {
+    background: var(--cream-dark);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-img-wrap {
+    position: relative;
+    width: 320px;
+    height: 420px;
+  }
+
+  .hero-img-main {
+    width: 260px;
+    height: 360px;
+    background: var(--brown-pale);
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-img-main span {
+    font-size: 12px;
+    color: var(--white);
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 16px;
+    opacity: 0.8;
+  }
+
+  .hero-img-accent {
+    width: 160px;
+    height: 200px;
+    background: var(--brown);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.15;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    background: var(--white);
+    border: 0.5px solid var(--brown-pale);
+    padding: 16px 20px;
+    min-width: 180px;
+  }
+
+  .hero-badge-num {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .hero-badge-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* STATS */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 0.5px solid var(--brown-pale);
+    border-bottom: 0.5px solid var(--brown-pale);
+    background: var(--white);
+  }
+
+  .stat {
+    padding: 32px 60px;
+    border-right: 0.5px solid var(--brown-pale);
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--text);
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  /* TENTANG */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 100px 60px;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-img {
+    background: var(--cream-dark);
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0.5px solid var(--brown-pale);
+  }
+
+  .about-img span {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+  }
+
+  .about-img::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    width: 100%;
+    height: 100%;
+    border: 0.5px solid var(--brown-pale);
+    z-index: -1;
+  }
+
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--brown-light);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  .section-title em { font-style: italic; color: var(--brown-light); }
+
+  .section-body {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.9;
+    margin-bottom: 32px;
+  }
+
+  /* LAYANAN */
+  .services {
+    background: var(--white);
+    padding: 100px 60px;
+  }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 56px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .service-card {
+    border: 0.5px solid var(--brown-pale);
+    padding: 36px 28px;
+    background: var(--cream);
+    position: relative;
+    transition: border-color 0.2s;
+  }
+
+  .service-card:hover { border-color: var(--brown); }
+
+  .service-card.featured {
+    background: var(--brown);
+    border-color: var(--brown);
+  }
+
+  .service-card.featured .service-name,
+  .service-card.featured .service-desc,
+  .service-card.featured .service-incl,
+  .service-card.featured .service-price,
+  .service-card.featured .incl-item { color: var(--white); }
+
+  .service-card.featured .incl-dot { background: var(--brown-pale); }
+
+  .service-tag {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--brown-pale);
+    color: var(--white);
+    padding: 4px 12px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .service-card.featured .service-tag {
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+  }
+
+  .service-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .service-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .service-incl {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .incl-list { list-style: none; margin-bottom: 24px; }
+
+  .incl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
+  .incl-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--brown-pale);
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  .service-divider {
+    height: 0.5px;
+    background: var(--brown-pale);
+    margin: 20px 0;
+    opacity: 0.4;
+  }
+
+  .service-price {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--text);
+  }
+
+  .service-suitable {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .service-card.featured .service-suitable { color: rgba(255,255,255,0.6); }
+
+  /* PORTFOLIO */
+  .portfolio {
+    padding: 100px 60px;
+    background: var(--cream);
+  }
+
+  .portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .portfolio-item {
+    aspect-ratio: 3/4;
+    background: var(--cream-dark);
+    border: 0.5px solid var(--brown-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.2s;
+    cursor: pointer;
+  }
+
+  .portfolio-item:hover { opacity: 0.85; }
+
+  .portfolio-item:nth-child(2) { background: var(--brown-pale); opacity: 0.6; }
+  .portfolio-item:nth-child(3) { background: var(--cream-dark); }
+  .portfolio-item:nth-child(5) { background: var(--brown-pale); opacity: 0.5; }
+  .portfolio-item:nth-child(7) { background: var(--cream-dark); }
+
+  .portfolio-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .portfolio-item:nth-child(2) .portfolio-label,
+  .portfolio-item:nth-child(5) .portfolio-label { color: var(--white); opacity: 0.7; }
+
+  .portfolio-cta {
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .ig-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--brown);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--brown-pale);
+    padding-bottom: 4px;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+  }
+
+  .ig-link:hover { color: var(--brown-light); }
+
+  /* TESTIMONI */
+  .testimonials {
+    background: var(--white);
+    padding: 100px 60px;
+  }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .testi-card {
+    border: 0.5px solid var(--brown-pale);
+    padding: 32px 28px;
+    background: var(--cream);
+  }
+
+  .testi-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .star {
+    width: 10px;
+    height: 10px;
+    background: var(--brown-pale);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .testi-text {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .testi-divider {
+    height: 0.5px;
+    background: var(--brown-pale);
+    margin-bottom: 16px;
+  }
+
+  .testi-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .testi-event {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* BOOKING */
+  .booking {
+    background: var(--cream-dark);
+    padding: 100px 60px;
+  }
+
+  .booking-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .booking-form-wrap {
+    background: var(--white);
+    border: 0.5px solid var(--brown-pale);
+    padding: 48px 40px;
+  }
+
+  .form-group { margin-bottom: 20px; }
+
+  .form-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 0.5px solid var(--brown-pale);
+    background: var(--cream);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--brown);
+  }
+
+  .form-textarea { resize: vertical; min-height: 100px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--brown);
+    color: var(--white);
+    border: none;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+
+  .form-submit:hover { background: var(--brown-light); }
+
+  .booking-info { padding: 16px 0; }
+
+  .booking-info-title {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 32px;
+  }
+
+  .booking-info-title em { font-style: italic; color: var(--brown-light); }
+
+  .info-point {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
+
+  .info-num {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--brown-pale);
+    min-width: 28px;
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .info-text { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+  .info-text strong { color: var(--text); font-weight: 500; }
+
+  .wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: transparent;
+    border: 0.5px solid var(--brown);
+    color: var(--brown);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 16px;
+    transition: all 0.2s;
+    font-family: var(--sans);
+  }
+
+  .wa-btn:hover { background: var(--brown); color: var(--white); }
+
+  /* FOOTER */
+  footer {
+    background: var(--text);
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--cream);
+    letter-spacing: 1px;
+  }
+
+  .footer-logo em { font-style: italic; color: var(--brown-pale); }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brown-pale);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--cream); }
+
+  .footer-copy {
+    font-size: 12px;
+    color: var(--brown-pale);
+    opacity: 0.6;
+    width: 100%;
+    text-align: center;
+    padding-top: 24px;
+    border-top: 0.5px solid rgba(255,255,255,0.08);
+    margin-top: 12px;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  .hero-title { animation: fadeUp 0.7s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.7s 0.2s ease both; }
+  .btn-row { animation: fadeUp 0.7s 0.3s ease both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 320px; }
+    .hero-left { padding: 56px 24px; }
+    .hero-title { font-size: 40px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat { padding: 24px; border-right: none; border-bottom: 0.5px solid var(--brown-pale); }
+    .about { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+    .services { padding: 60px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .portfolio { padding: 60px 24px; }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials { padding: 60px 24px; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .booking { padding: 60px 24px; }
+    .booking-inner { grid-template-columns: 1fr; gap: 40px; }
+    .booking-form-wrap { padding: 32px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Brushed <em>by</em> Lika</a>
+  <ul class="nav-links">
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#layanan">Layanan</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#testimoni">Testimoni</a></li>
+  </ul>
+  <a href="#booking" class="nav-cta">Booking Sekarang</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Professional Makeup Artist · Indonesia</div>
+    <h1 class="hero-title">Cantik alami<br>di hari <em>paling</em><br>spesialmu.</h1>
+    <p class="hero-sub">Menemanimu dari persiapan hingga pelaminan — dengan sentuhan riasan natural yang membuatmu tampil sempurna dan tahan sepanjang hari.</p>
+    <div class="btn-row">
+      <a href="#layanan" class="btn-primary">Lihat Layanan</a>
+      <a href="#booking" class="btn-ghost">Booking via WhatsApp</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <div class="hero-img-main">
+        <span>Foto utama<br>hasil karya terbaik</span>
+      </div>
+      <div class="hero-img-accent"></div>
+      <div class="hero-badge">
+        <div class="hero-badge-num">500+</div>
+        <div class="hero-badge-label">Klien bahagia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">500+</div>
+    <div class="stat-label">Klien bahagia</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">5+ thn</div>
+    <div class="stat-label">Pengalaman</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">Multi kota</div>
+    <div class="stat-label">Siap hadir ke lokasimu</div>
+  </div>
+</div>
+
+<!-- TENTANG -->
+<section class="about" id="tentang">
+  <div class="about-img">
+    <span>Foto Lika</span>
+  </div>
+  <div>
+    <div class="section-eyebrow">Tentang Lika</div>
+    <h2 class="section-title">Riasan yang lahir<br>dari <em>passion tulus.</em></h2>
+    <p class="section-body">Halo! Saya Lika, makeup artist profesional yang percaya bahwa setiap wajah memiliki kecantikan uniknya sendiri. Dengan pengalaman lebih dari 5 tahun mendampingi ratusan pengantin dan klien di berbagai acara, saya berkomitmen untuk menghadirkan riasan yang natural, tahan lama, dan benar-benar mencerminkan dirimu.</p>
+    <p class="section-body">Bukan sekadar merias — saya menemanimu agar merasa nyaman, percaya diri, dan cantik di momen terpenting hidupmu.</p>
+    <a href="https://www.instagram.com/brushedbylikaa/" target="_blank" class="ig-link">Lihat karya di Instagram →</a>
+  </div>
+</section>
+
+<!-- LAYANAN -->
+<section class="services" id="layanan">
+  <div class="services-header">
+    <div>
+      <div class="section-eyebrow">Layanan</div>
+      <h2 class="section-title">Semua untuk <em>momenmu</em></h2>
+    </div>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <span class="service-tag">Basic Package</span>
+      <div class="service-name">Basic Makeup</div>
+      <div class="service-desc">Riasan lengkap untuk berbagai acara — tampil cantik natural dan percaya diri sepanjang hari.</div>
+      <div class="service-incl">Termasuk:</div>
+      <ul class="incl-list">
+        <li class="incl-item"><span class="incl-dot"></span>Full makeup (foundation, contour, highlight)</li>
+        <li class="incl-item"><span class="incl-dot"></span>Eyebrow styling</li>
+        <li class="incl-item"><span class="incl-dot"></span>Eyeshadow + eyeliner</li>
+        <li class="incl-item"><span class="incl-dot"></span>False lashes (standard)</li>
+        <li class="incl-item"><span class="incl-dot"></span>Lipstick / lipcream</li>
+        <li class="incl-item"><span class="incl-dot"></span>Basic hair styling (simple hairdo / hair iron)</li>
+      </ul>
+      <div class="service-divider"></div>
+      <div class="service-price">Rp 700.000</div>
+      <div class="service-suitable">Wisuda · Kondangan · Photoshoot · Engagement · Event & Party</div>
+    </div>
+
+    <div class="service-card featured">
+      <span class="service-tag">Wedding</span>
+      <div class="service-name">Wedding Makeup Only</div>
+      <div class="service-desc">Riasan pengantin khusus dengan teknik dan produk bridal terbaik untuk hari paling istimewa hidupmu.</div>
+      <div class="service-incl">Termasuk:</div>
+      <ul class="incl-list">
+        <li class="incl-item"><span class="incl-dot"></span>Full bridal makeup (foundation, contour, highlight)</li>
+        <li class="incl-item"><span class="incl-dot"></span>Eyebrow styling</li>
+        <li class="incl-item"><span class="incl-dot"></span>Eyeshadow + eyeliner</li>
+        <li class="incl-item"><span class="incl-dot"></span>False lashes premium</li>
+        <li class="incl-item"><span class="incl-dot"></span>Lipstick / lipcream tahan lama</li>
+        <li class="incl-item"><span class="incl-dot"></span>Makeup only (tanpa hairdo)</li>
+      </ul>
+      <div class="service-divider"></div>
+      <div class="service-price">Rp 700.000</div>
+      <div class="service-suitable">Akad · Resepsi · Pengajian · Siraman</div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-tag">Tambahan</span>
+      <div class="service-name">Bridal Party</div>
+      <div class="service-desc">Paket untuk seluruh tim pengantin agar tampil serasi dan menawan di hari bahagiamu.</div>
+      <div class="service-incl">Cocok untuk:</div>
+      <ul class="incl-list">
+        <li class="incl-item"><span class="incl-dot"></span>Bridesmaid / pendamping pengantin</li>
+        <li class="incl-item"><span class="incl-dot"></span>Ibu pengantin</li>
+        <li class="incl-item"><span class="incl-dot"></span>Keluarga & tamu VIP</li>
+      </ul>
+      <div class="service-divider"></div>
+      <div class="service-price">Hubungi Kami</div>
+      <div class="service-suitable">Harga menyesuaikan jumlah orang & lokasi</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-header">
+    <div>
+      <div class="section-eyebrow">Portfolio</div>
+      <h2 class="section-title">Karya <em>terbaru</em></h2>
+    </div>
+    <a href="https://www.instagram.com/brushedbylikaa/" target="_blank" class="ig-link">Lihat semua di Instagram →</a>
+  </div>
+  <div class="portfolio-grid">
+    <div class="portfolio-item"><span class="portfolio-label">Wedding Look</span></div>
+    <div class="portfolio-item"><span class="portfolio-label">Wisuda</span></div>
+    <div class="portfolio-item"><span class="portfolio-label">Kondangan</span></div>
+    <div class="portfolio-item"><span class="portfolio-label">Photoshoot</span></div>
+    <div class="portfolio-item"><span class="portfolio-label">Bridal Party</span></div>
+    <div class="portfolio-item"><span class="portfolio-label">Engagement</span></div>
+    <div class="portfolio-item"><span class="portfolio-label">Natural Look</span></div>
+    <div class="portfolio-item"><span class="portfolio-label">Glam Look</span></div>
+  </div>
+  <div class="portfolio-cta">
+    <a href="https://www.instagram.com/brushedbylikaa/" target="_blank" class="ig-link">@brushedbylikaa di Instagram →</a>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section class="testimonials" id="testimoni">
+  <div class="section-eyebrow">Testimoni</div>
+  <h2 class="section-title">Kata mereka yang<br>sudah <em>merasakannya.</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+      </div>
+      <div class="testi-text">"Hasil riasannya natural banget, tapi tetap terlihat glowing di foto. Tahan dari akad sampai resepsi selesai!"</div>
+      <div class="testi-divider"></div>
+      <div class="testi-name">Anisa R.</div>
+      <div class="testi-event">Pernikahan · Bandung</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+      </div>
+      <div class="testi-text">"Lika sangat sabar dan profesional. Dia benar-benar dengerin keinginan saya dan hasilnya melebihi ekspektasi!"</div>
+      <div class="testi-divider"></div>
+      <div class="testi-name">Dewi S.</div>
+      <div class="testi-event">Wisuda · Jakarta</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+      </div>
+      <div class="testi-text">"Sudah pakai jasa Lika 3 kali untuk berbagai acara. Selalu puas! Hasilnya konsisten cantik dan natural."</div>
+      <div class="testi-divider"></div>
+      <div class="testi-name">Rara M.</div>
+      <div class="testi-event">Kondangan & Photoshoot · Surabaya</div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="booking-inner">
+    <div class="booking-info">
+      <div class="section-eyebrow">Booking</div>
+      <div class="booking-info-title">Amankan tanggalmu<br><em>sekarang.</em></div>
+      <div class="info-point">
+        <div class="info-num">01</div>
+        <div class="info-text"><strong>Isi form atau hubungi via WhatsApp.</strong> Tim kami akan merespons dalam 24 jam untuk konfirmasi ketersediaan jadwal.</div>
+      </div>
+      <div class="info-point">
+        <div class="info-num">02</div>
+        <div class="info-text"><strong>Konsultasi gratis.</strong> Diskusi look yang kamu inginkan sebelum memutuskan booking.</div>
+      </div>
+      <div class="info-point">
+        <div class="info-num">03</div>
+        <div class="info-text"><strong>DP 30% untuk kunci tanggal.</strong> Pelunasan H-7 sebelum hari acara.</div>
+      </div>
+      <div class="info-point">
+        <div class="info-num">04</div>
+        <div class="info-text"><strong>Siap hadir ke berbagai kota.</strong> Jakarta, Bandung, Surabaya, Bali, Yogyakarta, dan kota lainnya — biaya perjalanan menyesuaikan lokasi.</div>
+      </div>
+      <a href="https://wa.me/62XXXXXXXXXX?text=Halo%20Lika,%20saya%20ingin%20booking%20makeup%20untuk..." target="_blank" class="wa-btn">Chat WhatsApp Langsung →</a>
+    </div>
+    <div class="booking-form-wrap">
+      <div class="section-eyebrow" style="margin-bottom: 24px;">Form Permintaan</div>
+      <div class="form-group">
+        <label class="form-label">Nama lengkap</label>
+        <input type="text" class="form-input" placeholder="Nama kamu">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Tanggal acara</label>
+          <input type="date" class="form-input">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Jenis layanan</label>
+          <select class="form-select">
+            <option value="">Pilih layanan</option>
+            <option>Basic Makeup – Rp 700.000</option>
+            <option>Wedding Makeup Only – Rp 700.000</option>
+            <option>Bridal Party</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Kota acara</label>
+          <input type="text" class="form-input" placeholder="Misal: Bandung">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nomor WhatsApp</label>
+          <input type="tel" class="form-input" placeholder="08xxxxxxxxxx">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Catatan tambahan</label>
+        <textarea class="form-textarea" placeholder="Ceritakan sedikit tentang acaramu atau referensi look yang kamu inginkan..."></textarea>
+      </div>
+      <button class="form-submit" onclick="alert('Terima kasih! Tim Brushed by Lika akan segera menghubungimu.')">Kirim Permintaan →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Brushed <em>by</em> Lika</div>
+  <ul class="footer-links">
+    <li><a href="https://www.instagram.com/brushedbylikaa/" target="_blank">Instagram</a></li>
+    <li><a href="https://wa.me/62XXXXXXXXXX" target="_blank">WhatsApp</a></li>
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#layanan">Layanan</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Brushed by Lika — All rights reserved</div>
+</footer>
+
+</body>
+</html>
